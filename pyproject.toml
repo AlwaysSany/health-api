@@ -1,7 +1,28 @@
 [project]
 name = "health-api"
 version = "0.1.0"
-description = "Add your description here"
+description = "A comprehensive FastAPI microservice for health-related operations"
 readme = "README.md"
 requires-python = ">=3.13.3"
-dependencies = []
+dependencies = [
+    "alembic>=1.16.1",
+    "asyncpg>=0.30.0",
+    "fastapi>=0.115.12",
+    "passlib[bcrypt]>=1.7.4",
+    "pydantic[email]>=2.11.7",
+    "pydantic-settings>=2.9.1",
+    "python-jose[cryptography]>=3.5.0",
+    "python-multipart>=0.0.20",
+    "sqlalchemy>=2.0.41",
+    "uvicorn[standard]>=0.34.3",
+]
+
+[dependency-groups]
+dev = [
+    "coverage>=7.9.1",
+    "httpx>=0.28.1",
+    "mypy>=1.16.0",
+    "pytest>=8.4.0",
+    "pytest-asyncio>=1.0.0",
+    "ruff>=0.11.13",
+]
