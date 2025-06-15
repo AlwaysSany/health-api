@@ -84,7 +84,7 @@ uv run alembic upgrade head
 Start the application (choose one):
 
 ```bash
-uv run uvicorn app.main:app --port 5000 --reload
+uv run uvicorn app.main:app --host 0.0.0.0 --port 5000 --reload
 # Or use the convenience script
 chmod +x scripts/start.sh
 ./scripts/start.sh
@@ -157,8 +157,8 @@ This will start both the PostgreSQL database and the FastAPI application.
 
 Once the application is running, visit:
 
-- Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
+- Swagger UI: http://localhost:5000/docs
+- ReDoc: http://localhost:5000/redoc
 
 ## Database Migrations
 
@@ -208,3 +208,18 @@ The project follows a modular structure suitable for large applications with cle
 ## License
 
 MIT License
+
+## Contact
+
+- Author: [Sany Ahmed](https://github.com/sany2k8)
+- Email: your.email@example.com
+
+## References
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [SQLAlchemy](https://www.sqlalchemy.org/)
+- [Alembic](https://alembic.sqlalchemy.org/)
+- [Pydantic](https://pydantic-docs.helpmanual.io/)
+- [Python](https://www.python.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [UV](https://astral.sh/uv/)
+- [JWT](https://jwt.io/)

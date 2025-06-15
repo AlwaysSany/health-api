@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   db:
@@ -15,7 +15,7 @@ services:
   api:
     build: .
     ports:
-      - "8000:8000"
+      - "5000:5000"
     environment:
       DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/health_db
       SECRET_KEY: your-super-secret-key-here
@@ -25,7 +25,7 @@ services:
       - .:/app
     command: >
       sh -c "uv run alembic upgrade head &&
-             uv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+             uv run uvicorn app.main:app --host 0.0.0.0 --port 5000 --reload"
 
 volumes:
   postgres_data:

@@ -15,6 +15,7 @@ dependencies = [
     "python-multipart>=0.0.20",
     "sqlalchemy>=2.0.41",
     "uvicorn[standard]>=0.34.3",
+    "fastapi-mcp>=0.3.4",
 ]
 
 [dependency-groups]

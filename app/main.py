@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi_mcp import FastApiMCP
 from app.core.config import settings
 from app.middlewares.cors import add_cors_middleware
 from app.api.routes import auth, patients, doctors, appointments, medical_records
@@ -28,3 +29,9 @@ async def root():
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "version": settings.version}
+
+# Create an MCP server based on this app
+mcp = FastApiMCP(app)
+
+# Mount the MCP server directly to your app
+mcp.mount()
