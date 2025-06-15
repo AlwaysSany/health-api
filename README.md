@@ -31,10 +31,8 @@ A comprehensive FastAPI microservice for health-related operations with JWT auth
 
 The project follows a modular structure suitable for large applications with clear separation of concerns between models, schemas, routes, and business logic.
 
-<details>
-  <summary>🖼️ Click to see the Health Microservice API project structure</summary>
 ![project_structure](https://github.com/user-attachments/assets/496bd188-ba19-40ff-80e1-05abc6882966)
-</details>
+
 
 ## Installation
 
