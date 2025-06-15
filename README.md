@@ -103,6 +103,9 @@ chmod +x scripts/start.sh
 
 ## Some more required alembic migration commands
 
+These commands are not required during setup but are useful for managing migrations in the future
+during development.
+
 #### Downgrade Database (Revert Last Migration)
 
 ```bash
