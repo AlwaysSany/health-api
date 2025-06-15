@@ -11,7 +11,7 @@ from app.models.user import User
 router = APIRouter(prefix="/patients", tags=["patients"])
 
 
-@router.post("/", response_model=PatientResponse)
+@router.post("/", response_model=PatientResponse, operation_id="create_patient")
 async def create_patient(
     patient_data: PatientCreate,
     db: AsyncSession = Depends(get_async_session),
@@ -24,7 +24,7 @@ async def create_patient(
     return patient
 
 
-@router.get("/", response_model=List[PatientResponse])
+@router.get("/", response_model=List[PatientResponse], operation_id="get_patients")
 async def get_patients(
     skip: int = 0,
     limit: int = 100,
@@ -36,7 +36,7 @@ async def get_patients(
     return patients
 
 
-@router.get("/{patient_id}", response_model=PatientResponse)
+@router.get("/{patient_id}", response_model=PatientResponse, operation_id="get_patient")
 async def get_patient(
     patient_id: int,
     db: AsyncSession = Depends(get_async_session),
@@ -53,7 +53,7 @@ async def get_patient(
     return patient
 
 
-@router.put("/{patient_id}", response_model=PatientResponse)
+@router.put("/{patient_id}", response_model=PatientResponse, operation_id="update_patient")
 async def update_patient(
     patient_id: int,
     patient_data: PatientUpdate,
@@ -77,7 +77,7 @@ async def update_patient(
     return patient
 
 
-@router.delete("/{patient_id}")
+@router.delete("/{patient_id}", operation_id="delete_patient")
 async def delete_patient(
     patient_id: int,
     db: AsyncSession = Depends(get_async_session),

@@ -205,6 +205,38 @@ The project follows a modular structure suitable for large applications with cle
 4. Format code: `uv run black app/ tests/`
 5. Submit a pull request
 
+## MCP Integration
+
+Integration with MCP is done by using the `FastApiMCP` class from the `fastapi_mcp` package. The MCP server is mounted to the FastAPI application using the `mount` method.
+
+`windsurf` settings,
+
+{
+  "mcpServers": {
+    "health-api": {
+      "serverUrl": "http://localhost:5000/mcp",
+      "headers": {
+        "Authorization": "Bearer <put_your_bearer_token_here>"
+      } 
+    }
+  }
+}
+
+`vscode` or `cursor` settings,
+
+{
+  "servers": {
+    "health-api": {
+      "url": "http://localhost:5000/mcp",
+      "headers": {
+        "Authorization": "Bearer <put_your_bearer_token_here>"
+      }
+    }
+  }
+}
+
+Note: I haven't tested on `vscode` or `cursor` yet.
+
 ## License
 
 MIT License

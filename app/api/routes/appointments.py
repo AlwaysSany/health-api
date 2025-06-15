@@ -87,7 +87,11 @@ async def get_appointment(
     return appointment
 
 
-@router.put("/{appointment_id}", response_model=AppointmentResponse)
+@router.put(
+    "/{appointment_id}",
+    response_model=AppointmentResponse,
+    operation_id="update_appointment",
+)
 async def update_appointment(
     appointment_id: int,
     appointment_data: AppointmentUpdate,
@@ -113,7 +117,10 @@ async def update_appointment(
     return appointment
 
 
-@router.delete("/{appointment_id}")
+@router.delete(
+    "/{appointment_id}",
+    operation_id="delete_appointment",
+)
 async def delete_appointment(
     appointment_id: int,
     db: AsyncSession = Depends(get_async_session),

@@ -18,7 +18,7 @@ from app.models.user import User
 router = APIRouter(prefix="/medical-records", tags=["medical-records"])
 
 
-@router.post("/", response_model=MedicalRecordResponse)
+@router.post("/", response_model=MedicalRecordResponse, operation_id="create_medical_record")
 async def create_medical_record(
     record_data: MedicalRecordCreate,
     db: AsyncSession = Depends(get_async_session),
@@ -49,7 +49,7 @@ async def create_medical_record(
     return record
 
 
-@router.get("/", response_model=List[MedicalRecordResponse])
+@router.get("/", response_model=List[MedicalRecordResponse], operation_id="get_medical_records")
 async def get_medical_records(
     skip: int = 0,
     limit: int = 100,
@@ -70,7 +70,7 @@ async def get_medical_records(
     return records
 
 
-@router.get("/{record_id}", response_model=MedicalRecordResponse)
+@router.get("/{record_id}", response_model=MedicalRecordResponse, operation_id="get_medical_record")
 async def get_medical_record(
     record_id: int,
     db: AsyncSession = Depends(get_async_session),
@@ -93,7 +93,7 @@ async def get_medical_record(
     return record
 
 
-@router.put("/{record_id}", response_model=MedicalRecordResponse)
+@router.put("/{record_id}", response_model=MedicalRecordResponse, operation_id="update_medical_record")
 async def update_medical_record(
     record_id: int,
     record_data: MedicalRecordUpdate,
@@ -119,7 +119,7 @@ async def update_medical_record(
     return record
 
 
-@router.delete("/{record_id}")
+@router.delete("/{record_id}", operation_id="delete_medical_record")
 async def delete_medical_record(
     record_id: int,
     db: AsyncSession = Depends(get_async_session),

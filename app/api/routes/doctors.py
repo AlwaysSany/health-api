@@ -24,7 +24,7 @@ async def create_doctor(
     return doctor
 
 
-@router.get("/", response_model=List[DoctorResponse])
+@router.get("/", response_model=List[DoctorResponse],operation_id="get_doctors")
 async def get_doctors(
     skip: int = 0,
     limit: int = 100,
@@ -36,7 +36,7 @@ async def get_doctors(
     return doctors
 
 
-@router.get("/{doctor_id}", response_model=DoctorResponse)
+@router.get("/{doctor_id}", response_model=DoctorResponse,operation_id="get_doctor")
 async def get_doctor(
     doctor_id: int,
     db: AsyncSession = Depends(get_async_session),
@@ -53,7 +53,7 @@ async def get_doctor(
     return doctor
 
 
-@router.put("/{doctor_id}", response_model=DoctorResponse)
+@router.put("/{doctor_id}", response_model=DoctorResponse,operation_id="update_doctor")
 async def update_doctor(
     doctor_id: int,
     doctor_data: DoctorUpdate,
