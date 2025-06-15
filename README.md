@@ -207,14 +207,11 @@ uv run alembic upgrade head
 
 After obtaining a JWT access token, you can access the following endpoints:
 
+![Health-Microservice-API-Swagger-UI](https://github.com/user-attachments/assets/9c43f8c2-2cb0-4113-86ff-4c983bf77da5)
+
 <details>
   <summary>🖼️ Click to see the Health Microservice API endpoints</summary>
-
-  ![Health API Endpoints](https://example.com/architecture.png)
-
-</details>
-
-
+  
 ### Doctors
 - `GET /doctors` — List all doctors
 - `GET /doctors/{doctor_id}` — Get a specific doctor by ID
@@ -242,6 +239,11 @@ After obtaining a JWT access token, you can access the following endpoints:
 - `POST /appointments` — Create a new appointment
 - `PUT /appointments/{appointment_id}` — Update an appointment
 - `DELETE /appointments/{appointment_id}` — Delete an appointment
+  
+</details>
+
+
+
 
 All these endpoints require the `Authorization: Bearer <token>` header. Refer to the interactive API docs at `/docs` for detailed request/response schemas and try out the endpoints interactively.
 
