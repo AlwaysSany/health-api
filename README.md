@@ -31,7 +31,10 @@ A comprehensive FastAPI microservice for health-related operations with JWT auth
 
 The project follows a modular structure suitable for large applications with clear separation of concerns between models, schemas, routes, and business logic.
 
+<details>
+  <summary>🖼️ Click to see the Health Microservice API project structure</summary>
 ![project_structure](https://github.com/user-attachments/assets/496bd188-ba19-40ff-80e1-05abc6882966)
+</details>
 
 ## Installation
 
@@ -241,8 +244,6 @@ After obtaining a JWT access token, you can access the following endpoints:
 - `DELETE /appointments/{appointment_id}` — Delete an appointment
   
 </details>
-
-
 
 
 All these endpoints require the `Authorization: Bearer <token>` header. Refer to the interactive API docs at `/docs` for detailed request/response schemas and try out the endpoints interactively.
