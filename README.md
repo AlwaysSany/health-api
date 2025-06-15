@@ -207,6 +207,14 @@ uv run alembic upgrade head
 
 After obtaining a JWT access token, you can access the following endpoints:
 
+<details>
+  <summary>🖼️ Click to see the Health Microservice API endpoints</summary>
+
+  ![Health API Endpoints](https://example.com/architecture.png)
+
+</details>
+
+
 ### Doctors
 - `GET /doctors` — List all doctors
 - `GET /doctors/{doctor_id}` — Get a specific doctor by ID
