@@ -247,13 +247,6 @@ UV provides fast dependency resolution and installation. Useful commands:
 - `uv run <command>` - Run command in virtual environment
 - `uv lock` - Update the lock file
 
-## Contributing
-
-1. Install development dependencies: `uv sync --group dev`
-2. Make your changes
-3. Run tests: `uv run pytest`
-4. Format code: `uv run black app/ tests/`
-5. Submit a pull request
 
 ## MCP Integration
 
