@@ -18,7 +18,7 @@ A comprehensive FastAPI microservice for health-related operations with JWT auth
 
 ## Prerequisites
 
-- Python 3.11+
+- Python 3.13.3+
 - PostgreSQL
 - UV package manager
 
@@ -183,6 +183,40 @@ uv run alembic upgrade head
 - Login to get access token: `POST /auth/login`
 - Use the token in Authorization header: `Bearer <token>`
 
+## Main API Endpoints (after authentication)
+
+After obtaining a JWT access token, you can access the following endpoints:
+
+### Doctors
+- `GET /doctors` — List all doctors
+- `GET /doctors/{doctor_id}` — Get a specific doctor by ID
+- `POST /doctors` — Create a new doctor
+- `PUT /doctors/{doctor_id}` — Update a doctor's information
+- `DELETE /doctors/{doctor_id}` — Delete a doctor
+
+### Patients
+- `GET /patients` — List all patients
+- `GET /patients/{patient_id}` — Get a specific patient by ID
+- `POST /patients` — Create a new patient
+- `PUT /patients/{patient_id}` — Update a patient's information
+- `DELETE /patients/{patient_id}` — Delete a patient
+
+### Medical Records
+- `GET /medical-records` — List all medical records (optionally filter by patient)
+- `GET /medical-records/{record_id}` — Get a specific medical record by ID
+- `POST /medical-records` — Create a new medical record
+- `PUT /medical-records/{record_id}` — Update a medical record
+- `DELETE /medical-records/{record_id}` — Delete a medical record
+
+### Appointments
+- `GET /appointments` — List all appointments
+- `GET /appointments/{appointment_id}` — Get a specific appointment by ID
+- `POST /appointments` — Create a new appointment
+- `PUT /appointments/{appointment_id}` — Update an appointment
+- `DELETE /appointments/{appointment_id}` — Delete an appointment
+
+All these endpoints require the `Authorization: Bearer <token>` header. Refer to the interactive API docs at `/docs` for detailed request/response schemas and try out the endpoints interactively.
+
 ## Package Management with UV
 
 UV provides fast dependency resolution and installation. Useful commands:
@@ -211,6 +245,7 @@ Integration with MCP is done by using the `FastApiMCP` class from the `fastapi_m
 
 `windsurf` settings,
 
+```json 
 {
   "mcpServers": {
     "health-api": {
@@ -221,9 +256,11 @@ Integration with MCP is done by using the `FastApiMCP` class from the `fastapi_m
     }
   }
 }
+```
 
 `vscode` or `cursor` settings,
 
+```json
 {
   "servers": {
     "health-api": {
@@ -234,6 +271,7 @@ Integration with MCP is done by using the `FastApiMCP` class from the `fastapi_m
     }
   }
 }
+```
 
 Note: I haven't tested on `vscode` or `cursor` yet.
 
@@ -244,7 +282,7 @@ MIT License
 ## Contact
 
 - Author: [Sany Ahmed](https://github.com/sany2k8)
-- Email: your.email@example.com
+- Email: sany2k8@gmail.com
 
 ## References
 - [FastAPI](https://fastapi.tiangolo.com/)
