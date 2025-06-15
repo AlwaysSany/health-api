@@ -1,7 +1,7 @@
 
 # Health Microservice API
 
-A comprehensive FastAPI microservice for health-related operations with JWT authentication, PostgreSQL database, and Alembic migrations. Built with UV package manager for fast dependency management.
+A comprehensive FastAPI microservice for health-related operations with JWT authentication, PostgreSQL database, and Alembic migrations.It is backed by MCP server using `FastApiMCP`
 
 ## Working Demo
 
