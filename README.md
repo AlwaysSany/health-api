@@ -295,6 +295,25 @@ Note: I haven't tested on `vscode` or `cursor` yet.
 
 MIT License
 
+## TODOs
+- [ ] Add more test cases
+- [ ] Add more features
+- [ ] Add more documentation
+- [ ] Add more security features
+- [ ] Add more logging
+- [ ] Add more monitoring
+- [ ] Add more performance optimization
+
+## Contributing
+
+1. Install development dependencies: `uv sync --group dev`
+2. Make your changes
+3. Run tests: `uv run pytest`
+4. Format code: `uv run black app/ tests/`
+5. Submit a pull request
+
+See more at [Contributing](https://github.com/AlwaysSany/health-api/blob/main/CONTRIBUTING.md).
+
 ## Contact
 
 - Author: [Sany Ahmed](https://github.com/sany2k8)
