@@ -1,6 +1,11 @@
+
 # Health Microservice API
 
 A comprehensive FastAPI microservice for health-related operations with JWT authentication, PostgreSQL database, and Alembic migrations. Built with UV package manager for fast dependency management.
+
+## Working Demo
+
+[health-api-mcp-server-with-fastapi-demo.webm](https://github.com/user-attachments/assets/49dee391-a380-4c66-b7b9-f27ce44c2836)
 
 ## Features
 
@@ -21,6 +26,12 @@ A comprehensive FastAPI microservice for health-related operations with JWT auth
 - Python 3.13.3+
 - PostgreSQL
 - UV package manager
+
+## Project Structure
+
+The project follows a modular structure suitable for large applications with clear separation of concerns between models, schemas, routes, and business logic.
+
+![project_structure](https://github.com/user-attachments/assets/496bd188-ba19-40ff-80e1-05abc6882966)
 
 ## Installation
 
@@ -226,10 +237,6 @@ UV provides fast dependency resolution and installation. Useful commands:
 - `uv remove <package>` - Remove a dependency
 - `uv run <command>` - Run command in virtual environment
 - `uv lock` - Update the lock file
-
-## Project Structure
-
-The project follows a modular structure suitable for large applications with clear separation of concerns between models, schemas, routes, and business logic.
 
 ## Contributing
 
