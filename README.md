@@ -173,6 +173,12 @@ Once the application is running, visit:
 
 - Swagger UI: http://localhost:5000/docs
 - ReDoc: http://localhost:5000/redoc
+- MCP ping: check on terminal with the following command
+  
+```bash
+curl -H "Authorization: Bearer <your_bearer_token>" 
+-H "Accept: text/event-stream" http://localhost:5000/mcp
+```
 
 ## Database Migrations
 
