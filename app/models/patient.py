@@ -24,6 +24,13 @@ class Patient(Base):
     address = Column(Text)
     emergency_contact_name = Column(String(200))
     emergency_contact_phone = Column(String(20))
+    insurance_provider = Column(String(200))
+    insurance_policy_number = Column(String(100))
+    allergies = Column(Text)
+    blood_type = Column(String(5))
+    preferred_language = Column(String(50))
+    lifestyle = Column(Text)
+    family_history = Column(Text)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 

@@ -2,7 +2,18 @@ from fastapi import FastAPI
 from fastapi_mcp import FastApiMCP
 from app.core.config import settings
 from app.middlewares.cors import add_cors_middleware
-from app.api.routes import auth, patients, doctors, appointments, medical_records
+from app.api.routes import (
+    auth,
+    patients,
+    doctors,
+    appointments,
+    medical_records,
+    telemedicine,
+    lab,
+    referral,
+    pharmacy,
+    insurance,
+)
 
 app = FastAPI(
     title=settings.app_name,
@@ -19,6 +30,11 @@ app.include_router(patients.router)
 app.include_router(doctors.router)
 app.include_router(appointments.router)
 app.include_router(medical_records.router)
+app.include_router(telemedicine.router)
+app.include_router(lab.router)
+app.include_router(referral.router)
+app.include_router(pharmacy.router)
+app.include_router(insurance.router)
 
 
 @app.get("/")

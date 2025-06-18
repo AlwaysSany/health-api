@@ -14,6 +14,13 @@ class PatientBase(BaseModel):
     address: Optional[str] = None
     emergency_contact_name: Optional[str] = None
     emergency_contact_phone: Optional[str] = None
+    insurance_provider: Optional[str] = None
+    insurance_policy_number: Optional[str] = None
+    allergies: Optional[str] = None
+    blood_type: Optional[str] = None
+    preferred_language: Optional[str] = None
+    lifestyle: Optional[str] = None
+    family_history: Optional[str] = None
 
 
 class PatientCreate(PatientBase):
@@ -28,6 +35,13 @@ class PatientUpdate(BaseModel):
     address: Optional[str] = None
     emergency_contact_name: Optional[str] = None
     emergency_contact_phone: Optional[str] = None
+    insurance_provider: Optional[str] = None
+    insurance_policy_number: Optional[str] = None
+    allergies: Optional[str] = None
+    blood_type: Optional[str] = None
+    preferred_language: Optional[str] = None
+    lifestyle: Optional[str] = None
+    family_history: Optional[str] = None
 
 
 class PatientResponse(PatientBase):
