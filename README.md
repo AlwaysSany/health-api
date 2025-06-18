@@ -1,4 +1,3 @@
-
 # Health Microservice API
 
 A comprehensive FastAPI microservice for health-related operations with JWT authentication, PostgreSQL database, and Alembic migrations.It is backed by MCP server using `FastApiMCP`
@@ -240,11 +239,68 @@ After obtaining a JWT access token, you can access the following endpoints:
 - `POST /appointments` — Create a new appointment
 - `PUT /appointments/{appointment_id}` — Update an appointment
 - `DELETE /appointments/{appointment_id}` — Delete an appointment
+
+### Telemedicine
+- `POST /telemedicine/visits/` — Create a new virtual visit
+- `GET /telemedicine/visits/` — List all virtual visits
+- `GET /telemedicine/visits/{visit_id}` — Get a specific virtual visit by ID
+- `POST /telemedicine/chats/` — Create a new chat log
+- `GET /telemedicine/chats/` — List all chat logs
+- `GET /telemedicine/chats/{chat_id}` — Get a specific chat log by ID
+- `POST /telemedicine/videos/` — Create a new video session
+- `GET /telemedicine/videos/` — List all video sessions
+- `GET /telemedicine/videos/{video_id}` — Get a specific video session by ID
+
+### Lab
+- `POST /lab/orders/` — Create a new lab order
+- `GET /lab/orders/` — List all lab orders
+- `GET /lab/orders/{order_id}` — Get a specific lab order by ID
+- `POST /lab/results/` — Create a new lab result
+- `GET /lab/results/` — List all lab results
+- `GET /lab/results/{result_id}` — Get a specific lab result by ID
+- `POST /lab/images/` — Create a new diagnostic image
+- `GET /lab/images/` — List all diagnostic images
+- `GET /lab/images/{image_id}` — Get a specific diagnostic image by ID
+
+### Referral
+- `POST /referral/requests/` — Create a new referral request
+- `GET /referral/requests/` — List all referral requests
+- `GET /referral/requests/{request_id}` — Get a specific referral request by ID
+- `POST /referral/statuses/` — Create a new referral status
+- `GET /referral/statuses/` — List all referral statuses
+- `GET /referral/statuses/{status_id}` — Get a specific referral status by ID
+- `POST /referral/notes/` — Create a new specialist note
+- `GET /referral/notes/` — List all specialist notes
+- `GET /referral/notes/{note_id}` — Get a specific specialist note by ID
+
+### Pharmacy
+- `POST /pharmacy/medications/` — Create a new medication
+- `GET /pharmacy/medications/` — List all medications
+- `GET /pharmacy/medications/{med_id}` — Get a specific medication by ID
+- `POST /pharmacy/prescriptions/` — Create a new prescription
+- `GET /pharmacy/prescriptions/` — List all prescriptions
+- `GET /pharmacy/prescriptions/{pres_id}` — Get a specific prescription by ID
+- `POST /pharmacy/orders/` — Create a new pharmacy order
+- `GET /pharmacy/orders/` — List all pharmacy orders
+- `GET /pharmacy/orders/{order_id}` — Get a specific pharmacy order by ID
+
+### Insurance
+- `POST /insurance/plans/` — Create a new insurance plan
+- `GET /insurance/plans/` — List all insurance plans
+- `GET /insurance/plans/{plan_id}` — Get a specific insurance plan by ID
+- `POST /insurance/claims/` — Create a new insurance claim
+- `GET /insurance/claims/` — List all insurance claims
+- `GET /insurance/claims/{claim_id}` — Get a specific insurance claim by ID
+- `POST /insurance/payments/` — Create a new payment
+- `GET /insurance/payments/` — List all payments
+- `GET /insurance/payments/{payment_id}` — Get a specific payment by ID
+- `POST /insurance/invoices/` — Create a new invoice
+- `GET /insurance/invoices/` — List all invoices
+- `GET /insurance/invoices/{invoice_id}` — Get a specific invoice by ID
   
 </details>
 
-
-All these endpoints require the `Authorization: Bearer <token>` header. Refer to the interactive API docs at `/docs` for detailed request/response schemas and try out the endpoints interactively.
+All these endpoints require the Authorization: Bearer <token> header. Refer to the interactive API docs at /docs for detailed request/response schemas and try out the endpoints interactively.
 
 ## Package Management with UV
 
@@ -256,10 +312,12 @@ UV provides fast dependency resolution and installation. Useful commands:
 - `uv run <command>` - Run command in virtual environment
 - `uv lock` - Update the lock file
 
-
 ## MCP Integration
 
-Integration with MCP is done by using the `FastApiMCP` class from the `fastapi_mcp` package. The MCP server is mounted to the FastAPI application using the `mount` method.
+Integration with MCP is done by using the 
+`FastApiMCP` class from the `fastapi_mcp` package. 
+The MCP server is mounted to the FastAPI 
+application using the `mount` method.
 
 `windsurf` settings,
 
@@ -269,7 +327,8 @@ Integration with MCP is done by using the `FastApiMCP` class from the `fastapi_m
     "health-api": {
       "serverUrl": "http://localhost:5000/mcp",
       "headers": {
-        "Authorization": "Bearer <put_your_bearer_token_here>"
+        "Authorization": "Bearer 
+        <put_your_bearer_token_here>"
       } 
     }
   }
@@ -284,7 +343,8 @@ Integration with MCP is done by using the `FastApiMCP` class from the `fastapi_m
     "health-api": {
       "url": "http://localhost:5000/mcp",
       "headers": {
-        "Authorization": "Bearer <put_your_bearer_token_here>"
+        "Authorization": "Bearer 
+        <put_your_bearer_token_here>"
       }
     }
   }
@@ -308,13 +368,15 @@ MIT License
 
 ## Contributing
 
-1. Install development dependencies: `uv sync --group dev`
+1. Install development dependencies: `uv sync 
+--group dev`
 2. Make your changes
 3. Run tests: `uv run pytest`
 4. Format code: `uv run black app/ tests/`
 5. Submit a pull request
 
-See more at [Contributing](https://github.com/AlwaysSany/health-api/blob/main/CONTRIBUTING.md).
+See more at [Contributing](https://github.com/
+AlwaysSany/health-api/blob/main/CONTRIBUTING.md).
 
 ## Contact
 
