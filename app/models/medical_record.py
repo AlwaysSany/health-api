@@ -25,6 +25,11 @@ class MedicalRecord(Base):
     weight = Column(Float)
     height = Column(Float)
 
+    record_type = Column(String(50))
+    attachments = Column(Text)
+    version = Column(Integer, default=1)
+    access_log = Column(Text)
+
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 

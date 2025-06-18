@@ -18,6 +18,10 @@ class MedicalRecordBase(BaseModel):
     temperature: Optional[float] = None
     weight: Optional[float] = None
     height: Optional[float] = None
+    record_type: Optional[str] = None
+    attachments: Optional[str] = None
+    version: Optional[int] = 1
+    access_log: Optional[str] = None
 
 
 class MedicalRecordCreate(MedicalRecordBase):
@@ -36,6 +40,10 @@ class MedicalRecordUpdate(BaseModel):
     temperature: Optional[float] = None
     weight: Optional[float] = None
     height: Optional[float] = None
+    record_type: Optional[str] = None
+    attachments: Optional[str] = None
+    version: Optional[int] = None
+    access_log: Optional[str] = None
 
 
 class MedicalRecordResponse(MedicalRecordBase):

@@ -29,6 +29,10 @@ class Appointment(Base):
     notes = Column(Text)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    appointment_type = Column(String(20), default="in_person")
+    location = Column(String(255))
+    reminder_sent = Column(Integer, default=0)
+    follow_up_required = Column(Integer, default=0)
 
     # Relationships
     patient = relationship("Patient", back_populates="appointments")

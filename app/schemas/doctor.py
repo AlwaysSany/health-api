@@ -12,6 +12,11 @@ class DoctorBase(BaseModel):
     license_number: str
     years_of_experience: Optional[int] = None
     bio: Optional[str] = None
+    certifications: Optional[str] = None
+    languages_spoken: Optional[str] = None
+    ratings: Optional[int] = None
+    profile_picture_url: Optional[str] = None
+    department: Optional[str] = None
 
 
 class DoctorCreate(DoctorBase):
@@ -26,6 +31,11 @@ class DoctorUpdate(BaseModel):
     specialization: Optional[str] = None
     years_of_experience: Optional[int] = None
     bio: Optional[str] = None
+    certifications: Optional[str] = None
+    languages_spoken: Optional[str] = None
+    ratings: Optional[int] = None
+    profile_picture_url: Optional[str] = None
+    department: Optional[str] = None
 
 
 class DoctorResponse(DoctorBase):

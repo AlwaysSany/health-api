@@ -11,6 +11,10 @@ class AppointmentBase(BaseModel):
     duration_minutes: Optional[int] = 30
     reason: Optional[str] = None
     notes: Optional[str] = None
+    appointment_type: Optional[str] = "in_person"
+    location: Optional[str] = None
+    reminder_sent: Optional[bool] = False
+    follow_up_required: Optional[bool] = False
 
 
 class AppointmentCreate(AppointmentBase):
@@ -23,6 +27,10 @@ class AppointmentUpdate(BaseModel):
     status: Optional[AppointmentStatusEnum] = None
     reason: Optional[str] = None
     notes: Optional[str] = None
+    appointment_type: Optional[str] = None
+    location: Optional[str] = None
+    reminder_sent: Optional[bool] = None
+    follow_up_required: Optional[bool] = None
 
 
 class AppointmentResponse(AppointmentBase):

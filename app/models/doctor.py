@@ -16,6 +16,11 @@ class Doctor(Base):
     license_number = Column(String(100), unique=True, nullable=False)
     years_of_experience = Column(Integer)
     bio = Column(Text)
+    certifications = Column(Text)
+    languages_spoken = Column(Text)
+    ratings = Column(Integer)
+    profile_picture_url = Column(String(255))
+    department = Column(String(100))
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
